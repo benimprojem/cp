@@ -1,7 +1,7 @@
 
 
 aritmatik oparatörler
-
+```
 +	Addition	Adds together two values	x + y	
 -	Subtraction	Subtracts one value from another	x - y	
 *	Multiplication	Multiplies two values	x * y	
@@ -9,10 +9,10 @@ aritmatik oparatörler
 %	Modulus	Returns the division remainder	x % y	
 ++	Increment	Increases the value of a variable by 1	x++
 --	Decrement	Decreases the value of a variable by 1	x--
-
+```
 
 atama oparatörleri
-
+```
 =	x = 5	x = 5	
 +=	x += 3	x = x + 3	
 -=	x -= 3	x = x - 3	
@@ -24,25 +24,26 @@ atama oparatörleri
 ^=	x ^= 3	x = x ^ 3	
 >>=	x >>= 3	x = x >> 3	
 <<=	x <<= 3	x = x << 3
-
+```
 karşılaştırma oparatörleri
-
+```
 ==	Equal to	x == y	Returns 1 if the values are equal	
 !=	Not equal	x != y	Returns 1 if the values are not equal	
 >	Greater than	x > y	Returns 1 if the first value is greater than the second value	
 <	Less than	x < y	Returns 1 if the first value is less than the second value	
 >=	Greater than or equal to	x >= y	Returns 1 if the first value is greater than, or equal to, the second value	
 <=	Less than or equal to	x <= y	Returns 1 if the first value is less than, or equal to, the second value
-
+```
 mantıksal oparatörler
-
+```
 && 	AND	x < 5 &&  x < 10	Returns 1 if both statements are true	
 || 	OR	x < 5 || x < 4	Returns 1 if one of the statements is true	
 !	NOT	!(x < 5 && x < 10)	Reverse the result, returns 0 if the result is 1	
-
+```
 oparatör önceliği
 en yüksek öncelikten en düşük önceliğe doğru,
 öncelik eşit ise soldan sağa doğru işlenir.
+```
 ()		- Parantezler
 *, /, %	- Çarpma, Bölme, Modül
 +, -	- Toplama, Çıkarma
@@ -51,18 +52,11 @@ en yüksek öncelikten en düşük önceliğe doğru,
 &&		- Mantıksal VE
 ||		- Mantıksal VEYA
 =  		- Atama
+```
 
-
-
+```
 # derleyici makroları için
-
-
-
-kısa yorumlar için
-// 
-
-uzun yorumlar için
-/* */ 
+```
 
 
 Değişkenere isim vermenin genel kuralları şunardır :
@@ -72,8 +66,8 @@ Değişkenere isim vermenin genel kuralları şunardır :
 İsimler büyük/küçük harfe duyarlıdır ( myVar ve myvar farklı değişkenerdir)
 İsimler boşluk veya !, #, %, vb. gibi özel karakterler içeremez.
 Ayrılmış kelimeler (örneğin int) isim olarak kullanılamaz
-
-Types :
+```
+//Types :
 i8, i16, i32, i64, i128, i256, i512 
 u8, u16, u32, u64, u128, u256, u512 
 f8, f16, f32, f64, f128, f256, f512 
@@ -84,8 +78,11 @@ arr		// Array
 array   // Array
 varName[]	// varName Array variable
 ...		// Array..?
+```
+
 
 // değişkener.
+```
 type variableName = value;
 // number, char, text, array 
 i32 myNum = 15;
@@ -94,8 +91,8 @@ char myText[] = "Hello";
 str myText = "Hello";
 arr myArray = (1,2,2,3,58); 
 myArray[] = (1,2,2,3,58); 
-
-
+```
+```
 // Create variables
 i32 myNum = 15;            // Integer (whole number)
 f32 myFloatNum = 5.99;   // Floating point number
@@ -106,9 +103,10 @@ true 	//  true  = 1
 false 	//  false = 0
 void 	// null değer döndürmeyen
 int     //  int = i32 
-
+```
 
 // keywords
+```
 def
 new
 continue
@@ -123,27 +121,30 @@ and
 xor
 
 ...
-
+```
 Yorum satırları
 çok satırlı  yorum için
+```
 /*   */  
 
 /* 
 çok satırlı
 yorumlar
  */
-
+```
 tek satırlı yorum içinde
+```
 //  tek satırlık 
-
+```
 
 Ters eğik çizgi ( \) kaçış karakteri özel karakterleri dize karakterlerine dönüştürür:
 
 Escape character	Result	Description
+```
 \'	'	Single quote
 \"	"	Double quote
 \\	\	Backslash
-
+```
 
 
 // Print variables
@@ -153,7 +154,7 @@ Bir text alanı "" içerisinde değişkeneri {variable} şeklinde kullan.
 /0  
 gibi kaçış karakteri için <n>, <t>, <0>  kullan.. 
 
-
+```
 print("number: {myNum}", n);
 print("Float number: {myFloatNum}", n);
 print("character: {myLetter}", n);
@@ -167,9 +168,9 @@ int x = 5;
 int y = 6;
 int sum = x + y;
 print(sum);
+```
 
-
-
+```
 #include "io.h"
 
 int main() {
@@ -178,19 +179,19 @@ int main() {
 	print("Hello World! <n>am learning C <n>And it is awesome!"); // text içerisinde yeni satır anahtarı kullanımı.
 	return 0;
 }
-
+```
 
 koşullu ifadeler bulunur:
 
 if		Belirtilen bir koşul yerine getirildiğinde yürütülecek kod bloğunu belirtmek için kullanılırtrue
 else	Aynı koşul sağlandığında yürütülecek kod bloğunu belirtmek için kullanılırfalse
 elseif	İlk koşul doğruysa, test edilecek yeni bir koşulu belirtmek için kullanılırfalse
-
+```
 variable = (condition) ? expressionTrue : expressionFalse;
-
+```
 
 switch	Yürütülecek birçok alternatif kod bloğunu belirtmek için kullanılır
-
+```
 switch (expression) {
 	x:{
     // code block
@@ -202,8 +203,9 @@ switch (expression) {
     // code block default
 	}
 }
-
+```
 // group fonksiyonu tanımlanması:
+```
 group group_name1(...veriable) {
 	// tanımlı fonsiyonar tüm değişkener yerine gerekli olanları kullanır.
     x:{ 
@@ -220,54 +222,56 @@ group group_name1(...veriable) {
 		...
     }
 }
-
+```
 / Kullanımı: ama bir farkı vardır. 
 / ifade karşılaştırması yapmaz bunun yerine ifadeyi direkt olarak 
 / groupadı.etiket  gurubismi.  nokta işaretinden sonra etiket ile işaret edilen kod bloğunu çalıştırır.
 / group_name1.x group_name1  gurubun adını x de çalıştırılacak kod bloğunu ifade eder, ikisi nokta ile ayrılır.
 / tanımlanmamış bir etiket olursa hata verir. 
 / yukarıda ki örneğe göre group_name1.a(); hata verir.
-
+```
 group_name1.x(değişkener); // x deki kod bloğunu çalıştıracak.
 group_name1.y(değişkener); // y deki kod bloğunu çalıştıracak.
 group_name1.z(değişkener); // z deki kod bloğunu çalıştıracak.
 group_name1.a(değişkener); // hata üretirir. 
-
+```
 
 
 Döngü, while belirtilen koşul sağlandığı sürece bir kod bloğunu tekrarlar true:
-
+```
 // örnek
 int i = 0;
 while (i < 5) {
   print(i, n);
   i++;
 }
-
+```
 
 For Döngüsü
 Bir kod bloğunda kaç kez döngü yapmak istediğinizi tam olarak bildiğinizde, döngü foryerine döngüyü kullanın while:
 
 Sözdizimi
+```
 for (expression 1; expression 2; expression 3) {
   // code block to be executed
 }
+```
 İfade 1, kod bloğunun yürütülmesinden önce (bir kez) yürütülür.
 
 İfade 2, kod bloğunun yürütülmesi için koşulu tanımlar.
 
 Kod bloğu yürütüldükten sonra ifade 3 (her seferinde) yürütülür.
-
+```
 // Örnek
 int i;
 for (i = 0: i < 5: i++) {
   print(i, n);
 }
-
+```
 
 break= döngüyü tamamen durdur.
 continue= bu turu ata ama döngüye devam et.
-
+```
 // Örnek
 int i;
 for (i = 0: i < 6: i++) {
@@ -279,24 +283,26 @@ for (i = 0: i < 6: i++) {
   }
   print(i, n);
 }
-
+```
 foreach, hem dizini dizilerle hem de ilişkisel dizilerle kullanılabilir. 
 İki tür kullanım söz dizimi mevcuttur:
 Dizini Diziler için Sözdizimi
 Sözdizimi aşağıdadır:
-
+```
 foreach (array as $value) {
    statements
 }
+```
 Yukarıdaki yöntem, dizini bir diziyi yinelemek istediğinizde kullanışlıdır. 
 Aşağıdaki sözcükleri ise ilişkisel diziler için daha uygundur.
 
 İlişkisel Diziler için Sözdizimi
 Aşağıdaki kelimeleri inceleyin –
-
+```
 foreach (array as $key => $value) {
    statements
 }
+```
 Ancak her iki yaklaşım da dizini dizilerde iyi çalışır, çünkü dizideki bir öğenin dizisi aynı zamanda anahtar işlevini görür.
 
 
@@ -307,15 +313,16 @@ Bir Dizinin Elemanarına Erişim
 Bir dizi öğesine erişmek için, onun dizin numarasına bakın .
 Dizi dizineri 0 ile başlar : [0] ilk öğedir. [1] ikinci öğedir, vb.
 Bu ifade , şu öğenin ilk öğesinin [0] değerine erişir : myNumbers
-
+```
 Örnek
 int myNumbers[] = (25, 50, 75, 100);
 print(myNumbers[0]);
 
 // Outputs 25
-
+```
 
 // Declare an array of four integers:
+```
 int myNumbers[4];
 
 // Add elements
@@ -323,26 +330,28 @@ myNumbers[0] = 25;
 myNumbers[1] = 50;
 myNumbers[2] = 75;
 myNumbers[3] = 100;
-
-
+```
+```
 int myNumbers = ([10, 25, 50, 75, 100]);
 
 print( sizeof(myNumbers));  // Prints 20
-
+```
 sizeof operatör bir türün boyutunu bayt cinsinden döndürür 
-
+```
 int myNumbers = ([10, 25, 50, 75, 100]);
 int length = arrlen(myNumbers);
 
 print(length);  // Prints 5
+```
+
 arrlen operatörü dizideki eleman sayısını döndürür 
 
-
+```
 i64 veriable = ...veriables;
 
 // iki diziyi birleştirmek.
 i64 myNumber = ([ 70, 120, ...myNumbers]);
-
+```
 
 
 
@@ -352,24 +361,28 @@ i64 myNumber = ([ 70, 120, ...myNumbers]);
 Bu ifade, matris dizisinin ilk satırındaki (0) ve üçüncü sütunundaki (2) elemanın değerine erişir .
 
 Örnek 1 
+```
 int matrix[2][3] = ([1, 4, 2], 
 					[3, 6, 8]
 					);
 
 print( matrix[0][2]);  // Outputs 2
+```
 
 Örnek 2 
+```
 int matrix2=( [1, 4, 2], 
 			  [3, 6, 8]
 			);
 
 print( matrix2[0][2]);  // Outputs 2
-
+```
 
 3B Boyutu Diziler
 İki boyuttan fazlasına sahip dizileri de bildirebilirsiniz, boyut sayısında belirli bir sınırlama yoktur.
 
 Örnek 1 
+```
 // A 3D array with 2 blocks, each with 3 rows and 4 columns
 int example[2][3][4] =(	[ 
 							[3, 6, 8, 7], 
@@ -381,26 +394,29 @@ int example[2][3][4] =(	[
 							[3, 6, 8, 7]
 						]
 					);
-
+```
 
 strings  
+```
 char myText[] = "Hello";
 str myText = "Hello";
+```
 her ikiside aynıdır bir bakıma. string lere array gibi işlemler yapabilirsiniz.
 
 
 örnek:
+```
 str txt = "We are the so-called \"Vikings\" from the north.";
-
+```
 bir dizenin uzunuğunu almak için şu fonksiyonu kullanabilirsiniz strlen()
-
+```
 str alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 print(strlen(alphabet),n);   // 26
-
+```
 
 
 Kullanıcıdan girdi almak için şu fonksiyonu kullanabilirsiniz input(type değişken):
-
+```
 // Create an integer variable that will store the number we get from the user
 int myNum;
 
@@ -412,7 +428,7 @@ input(int myNum);
 
 // Output the number the user typed
 print("Your number is: <myNum>",n);
-
+```
 
 bir değişken oluşturulduğunda, değişkene bir bellek adresi atanır.
 Bellek adresi değişkenin bilgisayarda saklandığı yerdir.
@@ -420,15 +436,17 @@ Değişkene bir değer atadığımızda bu değer bu bellek adresinde saklanır.
 Buna erişmek için referans operatörünü ( &) kullanın ve sonuç değişkenin nerede saklandığını gösterir:
 
 Örnek
+```
 int myAge = 43;
 print(&myAge); // Outputs 0x7ffe5367e044
-
+```
 
 İşaretçi , başka bir değişkenin bellek adresini değeri olarak saklayan bir değişkendir 
 Bir işaretçi değişkeni, aynı türdeki bir veri türünü (örneğin int*) işaret eder ve operatör ile oluşturulur.
 Çalıştığınız değişkenin adresi işaretçiye atanır:
 
 Örnek
+```
 int myAge = 43;     // An int variable
 int* ptr = &myAge;  // A pointer variable, with the name ptr, that stores the address of myAge
 
@@ -443,26 +461,31 @@ print(ptr);
 
 // Dereference: Output the value of myAge with the pointer (43)
 print(*ptr);
-
+```
 
 
 Kendi fonksiyonunuzu oluşturmak için (genellikle declare olarak adlandırılır ), 
 fonksiyonun adını belirtin, ardından parantez () ve süslü parantezler kullanın {}:
 
 Sözdizimi
+```
 returnType functionName(type parameter1, type parameter2, type parameter3) {
   // code to be executed
 }
+```
+
 örnek1
+```
 int myFunction(int x, int y) {
   return x + y;
 }
-
+```
 örnek2
+```
 void myFunction() {
   // code to be executed
 }
-
+```
 Örnek2 Açıklaması
 myFunction()fonksiyonun adıdır
 void fonksiyonun bir dönüş değeri olmadığı anamına gelir. Dönüş değerleri hakkında daha fazla bilgiyi bir sonraki bölümde öğreneceksiniz.
@@ -475,13 +498,15 @@ genel bir fonksiyon olmadığı veya
 sadece tek bir yerde çalışması gerektiğinde, hız için iyi kullanımı şeklidir.
 
 bir değişkene atama..
+```
 int myFunction = func() {
   return x + y;
 }
-
+```
 fonksiyon içerisinde kullanma daha kısa..
+```
 print(int func(){return x + y;});
-
+```
 
 
 
@@ -493,17 +518,17 @@ Bir dizininint aksine, bir yapı birçok farklı veri türünü ( char, float, i
 
 Bir Yapı Oluşturun
 Anahtar kelimeyi kullanarak bir yapı oluşturabilir struct ve her bir üyesini süslü parantezler içinde bildirebilirsiniz:
-
+```
 struct MyStructure {   // Structure declaration
   int myNum;           // Member (int variable)
   char myLetter;       // Member (char variable)
 }; // End the structure with a semicolon
-
+```
 Yapıya erişebilmek için, yapının bir değişkenini oluşturmanız gerekir.
 structYöntemin içinde anahtar kelimeyi kullanın main(), ardından yapının adını ve yapı değişkeninin adını yazın:
 
 "s1" adında bir yapı değişkeni oluşturun:
-
+```
 struct myStructure {
   int myNum;
   char myLetter;
@@ -513,10 +538,12 @@ int main() {
   struct myStructure s1;
   return 0;
 }
+```
 Erişim Yapısı Üyeleri
 Bir yapının üyelerine erişmek için nokta sözdizimini ( .) kullanın:
 
 Örnek
+```
 // Create a structure called myStructure
 struct myStructure {
   int myNum;
@@ -537,9 +564,11 @@ int main() {
 
   return 0;
 }
+```
 Artık tek bir yapı kullanarak farklı değerlere sahip birden fazla yapı değişkenini kolayca oluşturabilirsiniz:
 
 Örnek
+```
 // Create different struct variables
 struct myStructure s1;
 struct myStructure s2;
@@ -550,19 +579,20 @@ s1.myLetter = 'B';
 
 s2.myNum = 20;
 s2.myLetter = 'C';
-
+```
 
 
 
 Enum 
  sabiterin (değiştirilemeyen değerlerin) bir grubunu temsil eden özel bir türdür.
 Bir enum oluşturmak için enumanahtar kelimeyi kullanın, ardından enum adını yazın ve enum öğelerini virgülle ayırın:
-
+```
 enum Level {
   LOW,
   MEDIUM,
   HIGH
 };
+```
 Son maddede virgüle gerek olmadığını unutmayın.
 
 Büyük harf kullanmak zorunu değildir, ancak çoğu zaman iyi bir uygulama olarak kabul edilir.
@@ -578,43 +608,45 @@ LOWAtanan değer, enum ( , MEDIUMveya ) içindeki öğelerden biri olmalıdır H
 enum Level myVar = MEDIUM;
 Varsayılan olarak, ilk öğe ( LOW) değerine 0, ikinci öğe ( MEDIUM) değerine 1vb. sahiptir.
 Şimdi myVar'ı yazdırmaya çalışırsanız, 1şunu temsil eden çıktıyı alırsınız MEDIUM:
-
+```
 int main() {
   // Create an enum variable and assign a value to it
   enum Level myVar = MEDIUM;
 
   // Print the enum variable
-  printf("%d", myVar);
+  print(myVar);
 
   return 0;
 }
+```
 Değerleri Değiştir
 Bildiğiniz gibi, bir enum'un ilk öğesinin değeri 0'dır. İkinci öğenin değeri 1'dir ve bu böyle devam eder.
 
 Değerleri daha iyi anamak için onarı kolayca değiştirebilirsiniz:
-
+```
 enum Level {
   LOW = 25,
   MEDIUM = 50,
   HIGH = 75
 };
-printf("%d", myVar); // Now outputs 50
+print(myVar); // Now outputs 50
+```
 Belirli bir öğeye bir değer atarsanız, sonraki öğelerin numaralarının buna göre güncelleneceğini unutmayın:
-
+```
 enum Level {
   LOW = 5,
   MEDIUM, // Now 6
   HIGH // Now 7
 };
-
+```
 
 
 Dynamic Memory
-
+```
 int* ptr = memnew int;
 *ptr = 35;
 print( *ptr);
-
+```
 Açıklama:
 memnew int bir tam sayı için bellek alanı oluşturur
 ptr o alanın adresini depolar
@@ -629,8 +661,9 @@ Bir şey yarattığınızda newişiniz bittiğinde onu kaldırmak sizin görevin
 Bunu yapmak için şunu kullanın memdel:
 
 Örnek
+```
 memdel ptr;
-
+```
 
 
 
