@@ -148,21 +148,21 @@ Escape character	Result	Description
 
 
 // Print variables
-Bir text alanı "" içerisinde değişkeneri {variable} şeklinde kullan. 
-/n 
-/t
+Bir text alanı "" içerisinde değişkeneri " {variable} " şeklinde veya " <variable>"  şeklinde kullan. 
+/nl 
+/tl
 /0  
-gibi kaçış karakteri için <n>, <t>, <0>  kullan.. 
+gibi kaçış karakteri için <nl>, <tl>, <0>  kullan.. 
 
 ```
-print("number: {myNum}", n);
-print("Float number: {myFloatNum}", n);
-print("character: {myLetter}", n);
+print("number: {myNum}", nl);
+print("Float number: {myFloatNum}", nl);
+print("character: {myLetter}", nl);
 
 // new print func echo "";
-//  <n> new line code.  <2n>  
-//  <t> tab line code.  <3t> 
-echo"number: {myNum} <n> Float number: {myFloatNum} <n> character: {myLetter}";
+//  <n> new line code.  <2nl>  
+//  <t> tab line code.  <3tl> 
+echo"number: {myNum} <nl> Float number: {myFloatNum} <nl> character: {myLetter}";
 
 int x = 5;
 int y = 6;
@@ -175,8 +175,8 @@ print(sum);
 
 int main() {
 	print("Hello World!");
-	print("Hello World!",n); // text i ekrana bastıktan sonra yeni satıra geçer.
-	print("Hello World! <n>am learning C <n>And it is awesome!"); // text içerisinde yeni satır anahtarı kullanımı.
+	print("Hello World!",nl); // texti ekrana bastıktan sonra yeni satıra geçer.
+	print("Hello World! <nl>am learning C <nl>And it is awesome!"); // text içerisinde yeni satır anahtarı kullanımı.
 	return 0;
 }
 ```
@@ -208,10 +208,6 @@ switch (expression) {
 ```
 group group_name1(...veriable) {
 	// tanımlı fonsiyonar tüm değişkener yerine gerekli olanları kullanır.
-    x:{ 
-		// kod bloğu 1
-		...
-    }    
     y:{
         print(" adasd {veriable[2]}  swf {veriable[3]}");
 		 // kod bloğu 2
@@ -221,6 +217,22 @@ group group_name1(...veriable) {
         // kod bloğu 3
 		...
     }
+    x: group group_name1(...veriable) {
+		// iç içe group tanımlanabilir.
+		xx:{ 
+			// kod bloğu 1
+			...
+		}    
+		yy:{
+			print(" adasd {veriable[2]}  swf {veriable[3]}");
+			 // kod bloğu 2
+			...
+		}    
+		zz: func(veriable[1], veriable[2]){
+			// kod bloğu 3
+			...
+		}
+	}
 }
 ```
 / Kullanımı: ama bir farkı vardır. 
@@ -233,7 +245,13 @@ group group_name1(...veriable) {
 group_name1.x(değişkener); // x deki kod bloğunu çalıştıracak.
 group_name1.y(değişkener); // y deki kod bloğunu çalıştıracak.
 group_name1.z(değişkener); // z deki kod bloğunu çalıştıracak.
+
+
 group_name1.a(değişkener); // hata üretirir. 
+
+group_name1.x.yy(değişkenler); // iç içe group örneği.
+
+group_name1."(etiket=group_name)".etiket(veriables);
 ```
 
 
@@ -242,7 +260,7 @@ Döngü, while belirtilen koşul sağlandığı sürece bir kod bloğunu tekrarl
 // örnek
 int i = 0;
 while (i < 5) {
-  print(i, n);
+  print(i, nl);
   i++;
 }
 ```
@@ -265,7 +283,7 @@ Kod bloğu yürütüldükten sonra ifade 3 (her seferinde) yürütülür.
 // Örnek
 int i;
 for (i = 0: i < 5: i++) {
-  print(i, n);
+  print(i, nl);
 }
 ```
 
@@ -281,7 +299,7 @@ for (i = 0: i < 6: i++) {
   if (i == 4) {
     break;
   }
-  print(i, n);
+  print(i, nl);
 }
 ```
 foreach, hem dizini dizilerle hem de ilişkisel dizilerle kullanılabilir. 
@@ -411,7 +429,7 @@ str txt = "We are the so-called \"Vikings\" from the north.";
 bir dizenin uzunuğunu almak için şu fonksiyonu kullanabilirsiniz strlen()
 ```
 str alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-print(strlen(alphabet),n);   // 26
+print(strlen(alphabet),nl);   // 26
 ```
 
 
@@ -421,13 +439,13 @@ Kullanıcıdan girdi almak için şu fonksiyonu kullanabilirsiniz input(type de�
 int myNum;
 
 // Ask the user to type a number
-print("Type a number: ", n);
+print("Type a number: ", nl);
 
 // Get and save the number the user types
 input(int myNum);
 
 // Output the number the user typed
-print("Your number is: <myNum>",n);
+print("Your number is: <myNum>",nl);
 ```
 
 bir değişken oluşturulduğunda, değişkene bir bellek adresi atanır.
@@ -665,5 +683,60 @@ Bunu yapmak için şunu kullanın memdel:
 memdel ptr;
 ```
 
+/////////////////////////////////////////////////////////////////
+```
+CPLang/
+├── src/
+│   ├── main.c               # Giriş noktası (derleyiciyi başlatır)
+│   ├── parser.c             # Söz dizimi ve sözdizimi analizi
+│   ├── lexer.c              # Tokenizer (söz çözücü)
+│   ├── semantic.c           # Anlam analizi
+│   ├── codegen.c            # Hedef kod üretimi
+│   ├── optimizer.c          # Optimizasyon aşamaları
+│   └── utils.c              # Yardımcı fonksiyonlar
+├── include/
+│   ├── parser.h
+│   ├── lexer.h
+│   ├── semantic.h
+│   └── codegen.h
+├── lib/                      # Dış kütüphaneler
+│   ├── compiler.h
+│   ├── io.h
+│   ├── memory.h
+│   └── string.h
+├── examples/                 # Kullanım örnekleri
+├── tests/                    # Testler
+├── README.md
+├── Makefile                  # Derleme scriptleri
+└── docs/                     # Belgeler, dil söz dizimi ve kılavuzlar
+```
+Her Dosyanın Rolü
+main.c: Derleyiciyi başlatır, giriş alınır, ve diğer aşamaları yönetir.
+lexer.c/h: Kaynak kodu karakter karakter okur, token'lara ayırır.
+parser.c/h: Token'ları kullanarak sözdizimi ağacı (AST) oluşturur.
+semantic.c/h: Anlam kurallarını uygular, hata kontrolü.
+codegen.c/h: Hedef kodu veya ara kodu üretir (örneğin, C kodu veya bytecode).
+optimizer.c/h: Kod optimizasyonları yapar.
+utils.c/h: Yardımcı fonksiyonlar (dizgi işlemleri, hata mesajları).
+
+Basit Bir Derleyici İş Akışı (Özet)
+Giriş: Kullanıcıdan .mlang uzantılı kaynak kod alınır.
+Lexing: Kaynak kod, token'lara ayrılır.
+Parsing: Token'lar kullanılarak AST oluşturulur.
+Semantic Analysis: Değişkenler, fonksiyonlar ve anlam kuralları kontrol edilir.
+Kod Üretimi: Hedef dil veya çalışma ortamına uygun kod üretilir.
+Çıktı: Derlenmiş veya çalıştırılabilir bir dosya oluşturulur.
 
 
+
+
+
+
+
+Eklenecekler:
+0: diğer dillerin en iyi yönleri tek bir dilde birleşmeli. 
+1: cp dil genişlentilmesi: sistem, ai, data manipülasyonu, oyun .. gibi bir çok alanda kullanılacak kütüphane dosyaları hazırlanmalı.
+2: ASM kodları oluşturduğunda yeniden optimizasyon ve optimazasyon enaz 3 kez tekrarlanmalı. 
+3: Çapraz derleme: linux, windows, .... heryerde çalışmalı.
+4: Yapay zeka entegresi ve görsel derleyici IDE , ide kendine ait bir sistemi olmalı ve çapraz derleme bu sistemden çerilerek yapılmalı.
+5: 
